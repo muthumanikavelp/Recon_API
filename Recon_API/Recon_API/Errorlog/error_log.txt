@@ -208,3 +208,59 @@ Message: SP:pr_set_reconfieldlistupdateError Message:Unknown column 'HPRPL202652
 Timestamp: 17-07-2026 1:14:58 PM
 Message: SP:pr_set_reconfieldlistupdateError Message:Unknown column 'v_report_id' in 'where clause'
 ----------------------------------------
+Timestamp: 06-08-2026 11:10:31 AM
+Message: SP:pr_recon_mst_tthemefieldError Message:Fatal error encountered during command execution.
+----------------------------------------
+Timestamp: 17-08-2026 5:38:27 PM
+Message: SP:pr_report_reconversionhistoryError Message:Unknown column 'display_order' in 'order clause'
+----------------------------------------
+Timestamp: 17-08-2026 5:38:30 PM
+Message: ReconReportVersionhistory_ControllerError Message:Value cannot be null. (Parameter 'fileContents')
+----------------------------------------
+Timestamp: 17-08-2026 5:39:17 PM
+Message: SP:pr_report_reconversionhistoryError Message:Unknown column 'display_order' in 'order clause'
+----------------------------------------
+Timestamp: 17-08-2026 5:39:17 PM
+Message: ReconReportVersionhistory_ControllerError Message:Value cannot be null. (Parameter 'fileContents')
+----------------------------------------
+Timestamp: 17-08-2026 5:39:39 PM
+Message: SP:pr_report_reconversionhistoryError Message:Unknown column 'display_order' in 'order clause'
+----------------------------------------
+Timestamp: 17-08-2026 5:39:39 PM
+Message: ReconReportVersionhistory_ControllerError Message:Value cannot be null. (Parameter 'fileContents')
+----------------------------------------
+Timestamp: 17-08-2026 5:40:44 PM
+Message: SP:pr_report_reconversionhistoryError Message:Unknown column 'display_order' in 'order clause'
+----------------------------------------
+Timestamp: 17-08-2026 5:40:44 PM
+Message: ReconReportVersionhistory_ControllerError Message:Value cannot be null. (Parameter 'fileContents')
+----------------------------------------
+Timestamp: 26-08-2026 11:29:13 AM
+Message: SP:pr_get_loginvalidation_newError Message:An item with the same key has already been added. Key: server=146.56.55.230;user id=root;password=Flexi@123;database=recon_flexi_ap;port=3306;sslmode=Disabled
+----------------------------------------
+Timestamp: 31-08-2026 2:12:30 PM
+Message: SP:pr_run_pagereportError Message:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use
+----------------------------------------
+Timestamp: 31-08-2026 2:20:30 PM
+Message: SP:pr_set_reconfieldlistupdateError Message:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'Imprest' instead of 'Reimbursement''
+					where tran_gid = 50250
+					and delete' at line 1
+----------------------------------------
+Timestamp: 31-08-2026 2:23:32 PM
+Message: SP:pr_set_reconfieldlistupdateError Message:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'Imprest' instead of 'Reimbursement''
+					where tran_gid = 50250
+					and delete' at line 1
+----------------------------------------
+Timestamp: 31-08-2026 3:35:04 PM
+Message: SP:pr_run_pagereportError Message:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use
+----------------------------------------
+Timestamp: 01-09-2026 10:17:13 AM
+Message: SP:pr_set_reconfieldlistupdateError Message:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'Imprest' instead of 'Reimbursement''
+					where tran_gid = 50250
+					and delete' at line 1
+----------------------------------------
+Timestamp: 01-09-2026 10:22:16 AM
+Message: SP:pr_set_reconfieldlistupdateError Message:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'Imprest' instead of 'Reimbursement''
+					where tran_gid = 50250
+					and delete' at line 1
+----------------------------------------

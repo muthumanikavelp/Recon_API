@@ -24,7 +24,8 @@ namespace Recon_API.Controllers
 		[HttpPost("Loginvalidation")]
 		public IActionResult Loginvalidation(Login_model objmodel)
 		{
-			constring = _configuration.GetSection("Appsettings")["ConnectionStrings"].ToString();
+            var forwardedFor = HttpContext.Request.Headers["X-Forwarded-For"].FirstOrDefault();
+            constring = _configuration.GetSection("Appsettings")["ConnectionStrings"].ToString();
 			DataTable response = new DataTable();
 			try
 			{
