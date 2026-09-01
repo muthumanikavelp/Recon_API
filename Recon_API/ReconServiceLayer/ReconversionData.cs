@@ -286,7 +286,10 @@ namespace ReconDataLayer
                     ds.Tables[0].TableName = "Recondetail";
                     ds.Tables[1].TableName = "processlist";
                     ds.Tables[2].TableName = "list";
-                }
+					ds.Tables[3].TableName = "Dataset";
+					ds.Tables[4].TableName = "Datasetorder";
+					ds.Tables[5].TableName = "Datasetmapping";
+				}
                 MemoryStream ms = new MemoryStream();
                 Rectangle rec = new Rectangle(PageSize.A4);
                 //Dictionary<string, int> tocEntries = new Dictionary<string, int>();
@@ -297,12 +300,18 @@ namespace ReconDataLayer
                     DataTable dt1 = new DataTable();
                     DataTable dt2 = new DataTable();
                     DataTable dt3 = new DataTable();
-                    dt1 = ds.Tables["Recondetail"];
+					DataTable dt4 = new DataTable();
+					DataTable dt5 = new DataTable();
+					DataTable dt6 = new DataTable();
+					dt1 = ds.Tables["Recondetail"];
                     dt2 = ds.Tables["processlist"];
                     dt3 = ds.Tables["list"];
+					dt4 = ds.Tables["Dataset"];
+					dt5 = ds.Tables["Datasetorder"];
+					dt6 = ds.Tables["Datasetmapping"];
 
-                    // Track headings and their page numbers
-                    lineNumber = 316;
+					// Track headings and their page numbers
+					lineNumber = 316;
                     PdfWriter writer = PdfWriter.GetInstance(document, ms);
                     // writer.PageEvent = new PdfFooter(logoPath);
                     document.Open();
@@ -1299,7 +1308,60 @@ namespace ReconDataLayer
                             lineNumber = 1490;
                         }
                     }
-                    document.Close();
+
+					/* Table Starts Dataset */
+					if (dt4.Rows.Count > 1)
+					{
+						lineNumber = 500;
+						document.Add(CreateTitle("Dataset", grassGreen));
+						document.Add(PdfdynamicTableGenration(dt4));
+						PdfPTable spacerTableAfter = new PdfPTable(1);
+						PdfPCell spacerCellAfter = new PdfPCell(new Phrase(" "))
+						{
+							FixedHeight = fh,
+							Border = PdfPCell.NO_BORDER
+						};
+						spacerTableAfter.AddCell(spacerCellAfter);
+						document.Add(spacerTableAfter);
+					}
+					/* Table Ends Dataset */
+
+
+					/* Table Starts Dataset Mapping*/
+					if (dt5.Rows.Count > 1)
+					{
+						lineNumber = 500;
+						document.Add(CreateTitle("Dataset Fields", grassGreen));
+						document.Add(PdfdynamicTableGenration(dt5));
+						PdfPTable spacerTableAfter = new PdfPTable(1);
+						PdfPCell spacerCellAfter = new PdfPCell(new Phrase(" "))
+						{
+							FixedHeight = fh,
+							Border = PdfPCell.NO_BORDER
+						};
+						spacerTableAfter.AddCell(spacerCellAfter);
+						document.Add(spacerTableAfter);
+					}
+
+					if (dt6.Rows.Count > 1)
+					{
+						lineNumber = 500;
+						document.Add(CreateTitle("Dataset Mapping", grassGreen));
+						document.Add(PdfdynamicTableGenration(dt6));
+						PdfPTable spacerTableAfter = new PdfPTable(1);
+						PdfPCell spacerCellAfter = new PdfPCell(new Phrase(" "))
+						{
+							FixedHeight = fh,
+							Border = PdfPCell.NO_BORDER
+						};
+						spacerTableAfter.AddCell(spacerCellAfter);
+						document.Add(spacerTableAfter);
+					}
+					/* Table Ends Dataset Mapping*/
+
+					document.NewPage();
+
+					document.Close();
                     lineNumber = 1491;
                     byte[] pdfBytes = ms.ToArray();
                     lineNumber = 1493;
